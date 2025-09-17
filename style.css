@@ -1,0 +1,233 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#ui-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#health-bars {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.health-bar-container {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.health-bar-container span {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.health-bar {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.health-bar-fill {
+    height: 100%;
+    width: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+#player-health {
+    background: linear-gradient(90deg, #28a745, #218838);
+}
+
+#enemy-health {
+    background: linear-gradient(90deg, #dc3545, #c82333);
+}
+
+#instructions {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
+#instruction-text {
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+}
+
+#exercise-progress-container {
+    width: 100%;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+#exercise-progress {
+    width: 0%;
+    height: 100%;
+    background-color: #ffc107;
+    border-radius: 5px;
+    transition: width 0.1s linear;
+}
+
+#game-over-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #fff;
+}
+
+#game-over-text {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#restart-button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffc107;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#help-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+#ai-chat-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    max-height: 500px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-top-left-radius: 15px;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+#ai-chat-container.visible {
+    transform: translateY(0);
+}
+
+#chat-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding-right: 5px;
+}
+
+.chat-message {
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #007bff;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.ai-message {
+    background-color: #444;
+    align-self: flex-start;
+}
+
+#chat-input-container {
+    display: flex;
+}
+
+#chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px 0 0 5px;
+    background-color: #333;
+    color: white;
+}
+
+#chat-send {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+

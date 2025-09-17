@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Workout Maximus</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <video id="webcam" style="display: none;"></video>
+
+        <div id="ui-container">
+            <div id="health-bars">
+                <div class="health-bar-container">
+                    <span>Player</span>
+                    <div class="health-bar">
+                        <div id="player-health" class="health-bar-fill"></div>
+                    </div>
+                </div>
+                <div class="health-bar-container">
+                    <span>Opponent</span>
+                    <div class="health-bar">
+                        <div id="enemy-health" class="health-bar-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="instructions">
+                <p id="instruction-text">Allow webcam access to begin...</p>
+                <div id="exercise-progress-container" style="display: none;">
+                    <div id="exercise-progress"></div>
+                </div>
+            </div>
+
+            <div id="game-over-screen" style="display: none;">
+                <h2 id="game-over-text"></h2>
+                <button id="restart-button">Play Again</button>
+            </div>
+            
+            <button id="help-button">?</button>
+        </div>
+
+        <div id="ai-chat-container" style="display: none;">
+            <div id="chat-box">
+                <div id="chat-messages"></div>
+                <div id="chat-input-container">
+                    <input type="text" id="chat-input" placeholder="Ask for help...">
+                    <button id="chat-send">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "main": "./main.js",
+            "pose-detection": "./pose-detection.js",
+            "exercises": "./exercises.js",
+            "ui": "./ui.js",
+            "ai-helper": "./ai-helper.js",
+            "audio": "./audio.js"
+        }
+    }
+    </script>
+    <script type="module" src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
